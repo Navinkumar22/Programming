@@ -1,0 +1,57 @@
+Odd length string Diagonal pattern ZOHO
+An odd length string S of length L is passed as input. The program must print the string S 
+as two diagonals as show in the example input output 
+
+Example 1:
+
+Input: cry
+
+Output:
+c y
+ r
+c y
+
+Example 2:
+
+Input: PROGRAM
+
+Expected output:
+
+P     M
+ R   A
+  O R
+   G
+  O R
+ R   A
+P     M
+
+
+Program:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+	char arr[100];
+	int l, k=0;
+ 	scanf("%s%n", arr,&l);
+ 	int h=l-1; 
+	for(int i=0;i<l;i++){ 
+		for(int j=0;j<l;j++){
+			if(i==j && 1/2!=i){
+ 				printf("%c ", arr[k++]); 
+			}else if(i+j==l-1){
+ 				if(i==l/2){
+					k++;
+				}
+				printf("%c ", arr[h--]); 
+			}else{
+				printf(" ");
+			}
+		}
+		printf("\n");
+
+	}
+}
+
+// sit19ec030@sairamtap.edu.in
