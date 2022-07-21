@@ -1,0 +1,40 @@
+Maximum Speed of Bike
+
+An integer N and N integers are passed as input. A bike racing track is numbered with the
+given N integers in the order of their occurrence. Also two integers P and Q are passed as
+input. Whenever a racer crosses the number P, the speed of the bike is increased by P units per
+hour. Whenever a racer crosses the number Q, the speed of the bike is decreased by Q units
+per hour. Print the maximum speed achieved during the race. The initial speed of the bike is 40
+units per hour.
+
+Boundary Condition(s):
+1<=N <= 50
+1<=P,Q <= 300
+
+Input Format:
+The first line contains N, P and Q separated by space(s).
+The second line contains N integers separated by space(s).
+
+Output Format:
+The first line contains the maximum speed of the bike.
+
+Example Input/Output 1:
+Input:
+4 20 10
+2 20 20 10
+Output:
+80
+
+Program:
+
+N,P,Q=map(int,input().split())
+l=list(map(int,input().split()))
+S=40
+a=[40]
+for i in range(N):
+	if l[i]==P:
+		S+=P 
+	elif 1[i]==Q:
+		S-=Q
+	o.append(s) 
+print(max(a))
