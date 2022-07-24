@@ -1,0 +1,48 @@
+Given a string S, the program must print the count of sub palindromes 
+(with a minimum length of two characters) in the string S.
+
+Boundary Conditions: Length of the string is between 2 and 200.
+
+Input Format: First line will contain the string value S.
+Output Format: First line will contain the integer which represents the count of sub palindromes in the string S.
+
+Sample Input/Output:
+
+
+Example 1: 
+Input: everest
+Output: 2
+
+Explanation: The sub palindromes are eve, ere
+
+Example 2: 
+Input: abccbaab
+Output: 5
+
+Program:
+
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<string.h> 
+
+int main(){
+	char ar[201]; 
+	int l,c=0; 
+	scanf("%s%n", ar, &l); 
+	for(int i=0;i<l;i++){
+		char t[201]={""};
+ 		t[0]=ar[i];
+		for(int j=i+1;j<1;j++){
+			strncat(t,&ar[j],1); 
+			char t1[201]="";
+			int len=strlen(t),o=0;
+ 			for(int k=len-1;k>=0;k--){
+				t1[0++]=t[k];
+			}
+			if(!strcmp(t1,t)){
+				c++;
+			}
+		}
+	}
+	printf("%d",c);
+}
