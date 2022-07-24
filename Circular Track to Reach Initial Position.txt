@@ -1,0 +1,45 @@
+Circular Track to Reach Initial Position
+
+A circular track has N positions numbered from 1 to N. The initial position l of the player and
+an integer M are given as the input. The player jumps M positions per move. The program
+must print the minimum number of moves required to reach the initial position again.
+
+Boundary Condition(s):
+1 <= N <= 1000
+1 <= I <= N
+1 <= M <= 1000
+
+Input Format:
+The first line contains the value of N, I and M.
+Output Format:
+The first line contains the number of moves,
+
+Example Input/Output 1:
+Input:
+10 2 5
+Output:
+2
+Explanation:
+2->7->2
+
+Example Input/Output 2:
+Input:
+70 1512
+Output:
+35
+
+Program: 
+
+Language:Python
+
+N,I,M=map(int, input().split())
+C=1
+S=I
+while(1):
+	I+=M 
+	if I>N:
+		I-=N 
+	if I==s:
+		print(c)
+		exit() 
+	C+=1
