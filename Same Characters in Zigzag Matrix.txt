@@ -1,0 +1,99 @@
+Same Characters in Zigzag Matrix
+
+Accept a matrix of size NxN containing only characters as input. 
+The program must print the characters which are in the same positions in the forward and the reverse zig-zag traversal. 
+If there is no character in the same position in such traversal then print - 1 as the output.
+
+Boundary Condition(s): 
+2 <= N <= 20
+
+Input Format: 
+The first line contains the value of N. 
+The next N lines contain N characters separated by space.
+Output Format: 
+The first line contains the characters 
+which are in the same positions in the forward and the reverse zig-zag traversal separated by space(s) or -1.
+
+Example Input/Output 1: 
+Input:
+a b c d e
+f g h i j
+k l m n o 
+f g h i j 
+k r c f a
+
+Output: a c h m
+
+Explanation: 
+In the forward traversal, the matrix contains 
+a, b, c, d, e, j, i, h, g, f, k, l, m, n, o, j, i, h, g, f, k, r, c, f and a. 
+In the reverse traversal, the matrix contains 
+a, f, cr, k, f, g, h, i, j, o, n, m, I, k, f, g, h, i, j, e, d, c, b and a. 
+While traversing in the forward and reverse direction, 
+the characters in the same positions are a, c, h and m as highlighted.
+
+Example Input/Output 2: 
+Input:
+m o h n g i 
+t s v u h r 
+g l m n n o 
+o c b d f g 
+r h v v s t 
+o g i g f e
+
+Output: g r h v s t g o
+
+Example Input/Output 3: 
+
+Input:
+a b c d 
+f g h i 
+k l m n 
+f g h i
+
+Output: -1
+
+Python Program:
+
+a=int(input()) 
+b=[input().split() for i in range(a)] 
+c=""
+d=""
+f=0 
+
+for i in range(a-1,-1,-1): 
+	if f==0:
+ 		for j in b[i][::-1]:
+			c+=j 
+		f=1 
+	else:
+		f=0 
+		for j in b[i]:
+			c+=j 
+
+f=0  
+
+for i in range(a):
+	if f==0:
+		f=1 
+		for j in b[i]:
+			d+=j 
+	else:
+		f=0 
+		for j in b[i][::-1]:
+			d+=j 
+
+l=0 
+f=0 
+
+if a%2!=0:
+	l=(len(c)//2)+1 
+else:
+	l=len(c)//2 
+
+for i in range(l): 
+	if c[i]==d[i]:
+		print(c[i], end=' ')
+		f=1 
+if f==0:
+	print(-1)
