@@ -1,6 +1,7 @@
 String Triangle Pattern
 Accept an integer N and a string S as input. The program must print the last N characters 
-of each word of S in the desired pattern as shown in the Example Input/Output section. Note: Each word in S contains more than N characters. If there is no word to fill the pattern then use *
+of each word of S in the desired pattern as shown in the Example Input/Output section. Note: Each word in S contains more than N characters. 
+If there is no word to fill the pattern then use *
 
 Boundary Condition(s): 
 2 <= N <= 10 
