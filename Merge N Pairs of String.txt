@@ -1,0 +1,66 @@
+Merge N Pairs of String
+The program must accept an integer N and N pairs of strings. 
+Then the program must merge every pair of strings and print the merged string.
+
+Boundary Condition(s): 
+2 <= N <= 100 
+1 <= Length of String <= 1000
+
+Input Format: 
+The first line contains N. The next N lines contain two strings each.
+Output Format: 
+The first N lines contain the merged strings.
+
+Example Input/Output 1: 
+Input:
+	2
+	good bye 
+	take care
+
+Output: 
+	gboyoed 
+	tcaakree
+
+Example Input/Output 2: 
+Input:
+	3
+	cool buddy 
+	think well 
+	welcome tin
+Output: 
+	cbouodldy 
+	twheilnlk 
+	wteilncome
+
+Program:
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<string.h> 
+
+int main()
+	int a; 
+	char ar1[1001], ar2[1001]; 
+	scanf("%d",&a); 
+
+	while(a>0){
+		scanf("%s %s", ar1, ar2);
+ 		int l1=strlen(ar1),l2=strlen(ar2),l; 
+		if(l1<l2){
+			l=l2;
+		}
+		else{
+			l=l1;
+		}
+		for(int i=0;i<l;i++){ 
+			if(l1>i && l2>i){
+				printf("%c%c", ar1[i], ar2[i]); 	
+			}else if(l1>i && l2<=i){
+				printf("%c",ar1[i]); 
+			}else{
+				printf("%c", ar2[i]);
+			}
+		}
+		printf("\n"); 
+		a--;
+	}
+}
